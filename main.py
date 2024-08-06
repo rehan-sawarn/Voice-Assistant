@@ -48,7 +48,7 @@ with sr.Microphone() as source:
     print("Done Listening...")
     text2= r.recognize_google(audio)
 
-if "information" in text2:
+if "information" or "Wikipedia" in text2:
     speak("You need information to which topic. Please tell me what you want to know")
     
     with sr.Microphone() as source:
@@ -62,7 +62,7 @@ if "information" in text2:
     assist = infow()
     assist.get_info(infor) 
 
-elif "play" in text2:
+elif "play" or "Youtube" in text2:
     speak("What video do you want me to play for you?")
     
     with sr.Microphone() as source:
